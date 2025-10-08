@@ -36,4 +36,4 @@ function AddressTable({ contacts, onEdit, onDelete }) {
   );
 }
 
-export default AddressTable;
+export default React.memo(AddressTable);

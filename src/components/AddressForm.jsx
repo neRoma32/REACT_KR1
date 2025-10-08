@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const initialFormState = { firstName: '', lastName: '', phone: '' };
 
-function AddressForm({ onSave, initialData }) { 
+function AddressForm({ onSave, initialData }) {
   const [formData, setFormData] = useState(initialData || initialFormState);
   const [errors, setErrors] = useState({});
 
@@ -16,13 +16,13 @@ function AddressForm({ onSave, initialData }) {
     setFormData({ ...formData, [name]: value });
   };
 
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.firstName) newErrors.firstName = 'The first name is required';
-    if (!formData.lastName) newErrors.lastName = 'The last name is required';
-    if (!formData.phone) newErrors.phone = 'The phone is required';
-    return newErrors;
-  };
+const validate = () => {
+  const newErrors = {};
+  if (!formData.firstName.trim()) newErrors.firstName = 'The first name is required';
+  if (!formData.lastName.trim()) newErrors.lastName = 'The last name is required';
+  if (!formData.phone.trim()) newErrors.phone = 'The phone is required';
+  return newErrors;
+};
 
 
   const handleSubmit = (e) => {
@@ -76,4 +76,4 @@ function AddressForm({ onSave, initialData }) {
   );
 }
 
-export default AddressForm;
+export default React.memo(AddressForm);
