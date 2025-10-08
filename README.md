@@ -1,4 +1,4 @@
-![Component Tree + Data Flow](assets/diagram.png)
+![Component Tree + Data Flow](src/assets/diagram.png)
 
 ## Патерни
 
@@ -11,4 +11,4 @@
 **Візуалізація списків (Rendering Lists):**
 Використовується метод `.map()` для динамічного створення рядків таблиці з масиву `contacts`, з обов’язковим атрибутом `key`.
 
-
+# REACT_KR1
